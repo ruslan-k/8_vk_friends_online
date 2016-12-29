@@ -4,7 +4,6 @@ from getpass import getpass
 APP_ID = 5779418  # чтобы получить app_id, нужно зарегистрировать своё приложение на https://vk.com/dev
 
 def get_user_login():
-    login = None
     login = input('Введите логин: ')
     while not login:
         login = input('Пустой поле, введите логин повторно: ')
@@ -12,7 +11,6 @@ def get_user_login():
 
 
 def get_user_password():
-    password = None
     password = getpass('Введите пароль: ')
     while not password:
         password = getpass('Пустой поле, введите пароль повторно: ')
