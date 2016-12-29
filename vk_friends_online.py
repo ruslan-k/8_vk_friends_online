@@ -26,8 +26,9 @@ def get_online_friends(login, password):
             scope='friends'
         )
         api = vk.API(session)
-        online_friends = api.friends.getOnline()
-        return online_friends
+        online_friend_ids = api.friends.getOnline()
+        online_friends_list = api.users.get(user_ids=online_friend_ids)
+        return online_friends_list
     except vk.exceptions.VkAuthError:
         print('Неверный логин или пароль.')
         exit()
